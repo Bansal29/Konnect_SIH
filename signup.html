@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title class="sign">Sign Up</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(pink, blue);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 25px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+    }
+
+    .container:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 10px px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .error {
+      color: #e74c3c;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+      .container {
+        max-width: 90%;
+      }
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: #fff;
+      font-size: 16px;
+      color: #333;
+      appearance: none; /* Remove the default arrow icon on some browsers */
+    }
+
+    /* Style the dropdown arrow icon */
+    select::-ms-expand {
+      display: none; /* Remove the arrow icon on Internet Explorer/Edge */
+    }
+
+    /* Add hover and focus styles */
+    select:hover,
+    select:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+    #prn {
+      width: 85%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    /* ... (your existing CSS code) */
+
+    .password-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .password-container input[type="password"] {
+      flex-grow: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .password-container button {
+      padding: 10px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .password-container button:hover {
+      background-color: #2980b9;
+    }
+    .clg {
+      display: flex;
+    }
+    #email1 {
+      border-right: none;
+    }
+    #email2 {
+      border-left: none;
+      background: rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h1>Sign Up</h1>
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="university">Select University:</label>
+          <select id="university" name="university">
+            <option value="" disabled selected>Select your university</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="email">College Email:</label>
+          <div class="clg">
+            <input type="text" id="email1" name="email" required />
+            <input type="email" id="email2" name="email" disabled />
+          </div>
+          <div class="error" id="email-error"></div>
+        </div>
+        <div class="form-group">
+          <label for="prn">Name:</label>
+          <input type="text" id="prn" name="prn" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <div class="password-container">
+            <input type="password" id="password" name="password" required />
+            <button type="button" id="show-password">Show</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            required
+          />
+          <div class="error" id="password-error"></div>
+        </div>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
